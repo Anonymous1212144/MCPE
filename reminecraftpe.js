@@ -403,13 +403,13 @@ Module.expectedDataFileDownloads++;
     }, {
       "filename": "/assets/terrain.png",
       "start": 799849,
-      "end": 848158
+      "end": 850660
     }, {
       "filename": "/readme.txt",
-      "start": 848158,
-      "end": 848591
+      "start": 850660,
+      "end": 851093
     } ],
-    "remote_package_size": 848591
+    "remote_package_size": 851093
   });
 })();
 
