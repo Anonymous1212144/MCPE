@@ -498,9 +498,6 @@ if (ENVIRONMENT_IS_NODE) {
     process.exitCode = status;
     throw toThrow;
   };
-  if (typeof WebAssembly == "undefined") {
-    eval(fs.readFileSync(locateFile("reminecraftpe.wasm.js")) + "");
-  }
 } else if (ENVIRONMENT_IS_SHELL) {
   if ((typeof process == "object" && typeof require === "function") || typeof window == "object" || typeof importScripts == "function") throw new Error("not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)");
 } else  if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
@@ -776,6 +773,10 @@ var wasmBinary;
 if (Module["wasmBinary"]) wasmBinary = Module["wasmBinary"];
 
 legacyModuleProp("wasmBinary", "wasmBinary");
+
+if (typeof WebAssembly != "object") {
+  err("no native wasm support detected");
+}
 
 function intArrayFromBase64(s) {
   if (typeof ENVIRONMENT_IS_NODE != "undefined" && ENVIRONMENT_IS_NODE) {
@@ -1104,13 +1105,6 @@ function getBinaryPromise(binaryFile) {
 function instantiateArrayBuffer(binaryFile, imports, receiver) {
   return getBinaryPromise(binaryFile).then(binary => WebAssembly.instantiate(binary, imports)).then(receiver, reason => {
     err(`failed to asynchronously prepare wasm: ${reason}`);
-    if (typeof location != "undefined") {
-      var search = location.search;
-      if (search.indexOf("_rwasm=0") < 0) {
-        location.href += (search ? search + "&" : "?") + "_rwasm=0";
-        return;
-      }
-    }
     if (isFileURI(wasmBinaryFile)) {
       err(`warning: Loading from a file URI (${wasmBinaryFile}) is not supported in most browsers. See https://emscripten.org/docs/getting_started/FAQ.html#how-do-i-run-a-local-webserver-for-testing-why-does-my-program-stall-in-downloading-or-preparing`);
     }
@@ -1927,9 +1921,7 @@ var PThread = {
     worker.postMessage({
       "cmd": "load",
       "handlers": handlers,
-      "wasmMemory": {
-        "buffer": wasmMemory.buffer
-      },
+      "wasmMemory": wasmMemory,
       "wasmModule": wasmModule,
       "workerID": worker.workerID
     });
@@ -12311,7 +12303,6 @@ var _emscripten_resize_heap = requestedSize => {
     var newSize = Math.min(maxHeapSize, alignUp(Math.max(requestedSize, overGrownHeapSize), 65536));
     var replacement = growMemory(newSize);
     if (replacement) {
-      err("Warning: Enlarging memory arrays, this is not fast! " + [ oldSize, newSize ]);
       return true;
     }
   }
