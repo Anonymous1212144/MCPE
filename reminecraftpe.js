@@ -315,101 +315,101 @@ Module.expectedDataFileDownloads++;
     }, {
       "filename": "/assets/gui/items.png",
       "start": 193884,
-      "end": 209607
+      "end": 213929
     }, {
       "filename": "/assets/gui/menubuttons.png",
-      "start": 209607,
-      "end": 218897
+      "start": 213929,
+      "end": 223219
     }, {
       "filename": "/assets/gui/plusknapp.png",
-      "start": 218897,
-      "end": 223445
+      "start": 223219,
+      "end": 227767
     }, {
       "filename": "/assets/gui/selectworld/add.png",
-      "start": 223445,
-      "end": 225344
+      "start": 227767,
+      "end": 229666
     }, {
       "filename": "/assets/gui/startmenu/sm_multi.png",
-      "start": 225344,
-      "end": 227834
+      "start": 229666,
+      "end": 232156
     }, {
       "filename": "/assets/gui/startmenu/sm_options.png",
-      "start": 227834,
-      "end": 229940
+      "start": 232156,
+      "end": 234262
     }, {
       "filename": "/assets/gui/startmenu/sm_play.png",
-      "start": 229940,
-      "end": 231568
+      "start": 234262,
+      "end": 235890
     }, {
       "filename": "/assets/gui/title.png",
-      "start": 231568,
-      "end": 237373
+      "start": 235890,
+      "end": 241695
     }, {
       "filename": "/assets/gui/touchgui.png",
-      "start": 237373,
-      "end": 255898
+      "start": 241695,
+      "end": 260220
     }, {
       "filename": "/assets/icon.png",
-      "start": 255898,
-      "end": 419856
+      "start": 260220,
+      "end": 424178
     }, {
       "filename": "/assets/ios/Default-568h@2x.png",
-      "start": 419856,
-      "end": 524611
+      "start": 424178,
+      "end": 528933
     }, {
       "filename": "/assets/ios/Default-Landscape~ipad.png",
-      "start": 524611,
-      "end": 640014
+      "start": 528933,
+      "end": 644336
     }, {
       "filename": "/assets/ios/Default.png",
-      "start": 640014,
-      "end": 675448
+      "start": 644336,
+      "end": 679770
     }, {
       "filename": "/assets/ios/Default@2x.png",
-      "start": 675448,
-      "end": 794216
+      "start": 679770,
+      "end": 798538
     }, {
       "filename": "/assets/item/camera.png",
-      "start": 794216,
-      "end": 794898
+      "start": 798538,
+      "end": 799220
     }, {
       "filename": "/assets/mob/char.png",
-      "start": 794898,
-      "end": 796258
+      "start": 799220,
+      "end": 800580
     }, {
       "filename": "/assets/particles.png",
-      "start": 796258,
-      "end": 797102
+      "start": 800580,
+      "end": 801424
     }, {
       "filename": "/assets/patches/n_rocket.png",
-      "start": 797102,
-      "end": 797287
+      "start": 801424,
+      "end": 801609
     }, {
       "filename": "/assets/patches/n_rocket_launched.png",
-      "start": 797287,
-      "end": 797401
+      "start": 801609,
+      "end": 801723
     }, {
       "filename": "/assets/patches/n_rocket_launcher.png",
-      "start": 797401,
-      "end": 797630
+      "start": 801723,
+      "end": 801952
     }, {
       "filename": "/assets/patches/patch_data.txt",
-      "start": 797630,
-      "end": 799739
+      "start": 801952,
+      "end": 804061
     }, {
       "filename": "/assets/readme.txt",
-      "start": 799739,
-      "end": 799849
+      "start": 804061,
+      "end": 804171
     }, {
       "filename": "/assets/terrain.png",
-      "start": 799849,
-      "end": 850660
+      "start": 804171,
+      "end": 854982
     }, {
       "filename": "/readme.txt",
-      "start": 850660,
-      "end": 851093
+      "start": 854982,
+      "end": 855415
     } ],
-    "remote_package_size": 851093
+    "remote_package_size": 855415
   });
 })();
 
